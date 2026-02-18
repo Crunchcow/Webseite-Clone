@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum – SV Westfalia Osterwick</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-900 flex flex-col min-h-screen">
+
+  <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 font-semibold hover:opacity-80 transition">
+        <div class="bg-red-600 text-white w-8 h-8 flex items-center justify-center rounded-lg font-bold">W</div>
+        <span class="hidden sm:inline">Westfalia Osterwick</span>
+      </a>
+      <a href="../index.html" class="text-sm font-bold text-slate-500 hover:text-red-600 transition">
+        ← Zurück
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-12 px-4">
+    <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200">
+      
+      <h1 class="text-3xl font-black mb-8 text-slate-900 border-b pb-4">Impressum</h1>
+
+      <div class="space-y-8 text-slate-700">
+        
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Angaben gemäß § 5 DDG</h2>
+          <p>
+            <strong>SV Westfalia Osterwick 1923 e.V.</strong><br>
+            Hauptstraße 46<br>
+            48720 Rosendahl<br>
+            Telefon: +49 (0)2547-933636<br>
+            Internet: www.westfalia-osterwick.de
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Vertreten durch den Vorstand:</h2>
+          <p>
+            1. Vorsitzender: Daniel Kramer<br>
+            2. Vorsitzender: Marie Schräder<br>
+            Geschäftsführer: Peter Fedders<br>
+            Kassierer: Eike Nonhoff
+          </p>
+          <p class="text-sm text-slate-500 mt-2 italic">
+            (Bitte hier die aktuellen Namen aus dem Vereinsregister eintragen)
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Kontakt</h2>
+          <p>
+            Telefon: +49 (0)2547-933636<br>
+            E-Mail: <a href="mailto:webmaster@westfalia-osterwick.de" class="text-red-600 hover:underline">webmaster@westfalia-osterwick.de</a>
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Registereintrag</h2>
+          <p>
+            Eintragung im Vereinsregister.<br>
+            Registergericht: Amtsgericht Coesfeld<br>
+            Registernummer: VR 315
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Verbraucher­streit­beilegung</h2>
+          <p class="text-sm">
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-bold text-slate-900 mb-2">Haftung für Inhalte</h2>
+            <p class="text-sm text-slate-600 mb-4">
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs mt-auto">
+    © <span id="year"></span> SV Westfalia Osterwick 1923 e.V.
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

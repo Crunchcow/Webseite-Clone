@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vorstand – SV Westfalia Osterwick</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            westfalia: {
+              red: '#dc2626',
+              dark: '#991b1b',
+              light: '#fef2f2',
+            },
+            anthrazit: '#0f172a',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    /* Subtiler Hover-Effekt für die Karten */
+    .board-card:hover { transform: translateY(-4px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-anthrazit flex flex-col min-h-screen">
+
+  <header class="bg-white/95 backdrop-blur border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 font-semibold group">
+        <div class="bg-westfalia-red text-white w-8 h-8 flex items-center justify-center rounded-lg font-bold group-hover:rotate-3 transition-transform">W</div>
+        <span class="hidden sm:inline">Westfalia Osterwick</span>
+      </a>
+      <a href="../index.html" class="text-sm font-bold text-gray-500 hover:text-westfalia-red transition flex items-center gap-1">
+        <span aria-hidden="true">←</span> Zurück zur Startseite
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h1 class="text-4xl font-black mb-4 text-anthrazit">Der Vorstand</h1>
+        <p class="text-lg text-gray-600">
+          Wir kümmern uns um die Organisation und die Zukunft des Vereins. 
+          Hast du Fragen oder Anregungen? Sprich uns gerne an!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">DK</div>
+          <h3 class="text-xl font-bold text-anthrazit">Daniel Kramer</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">1. Vorsitzender / Fußball Senioren</span>
+          <a href="mailto:d.kramer@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">PF</div>
+          <h3 class="text-xl font-bold text-anthrazit">Peter Fedders</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">Geschäftsführer</span>
+          <a href="mailto:fedders@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">MS</div>
+          <h3 class="text-xl font-bold text-anthrazit">Marie Schräder</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">2. Vorsitzende</span>
+          <a href="mailto:schraeder@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">IR</div>
+          <h3 class="text-xl font-bold text-anthrazit">Ingo Röschenkemper</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">2. Vorsitzender / Leichtathletik</span>
+          <a href="mailto:roeschenkemper@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">EN</div>
+          <h3 class="text-xl font-bold text-anthrazit">Eike Nonhoff</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">Kassierer</span>
+          <a href="mailto:nonhoff@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">KL</div>
+          <h3 class="text-xl font-bold text-anthrazit">Kai Lemke</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">Schriftführer / Spielbetrieb</span>
+          <div class="w-full space-y-2">
+            <a href="tel:015115717088" class="w-full py-2 rounded-lg bg-gray-50 border border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                📞 0151 15717088
+            </a>
+            <a href="mailto:lemke@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+                ✉️ E-Mail
+            </a>
+          </div>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">DW</div>
+          <h3 class="text-xl font-bold text-anthrazit">Dieter Wilger</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">Geschäftsführer des ZfFG</span>
+          <a href="mailto:wilger@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">AH</div>
+          <h3 class="text-xl font-bold text-anthrazit">Andrea Hagen</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">Beisitzerin</span>
+          <a href="mailto:hagen@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">MB</div>
+          <h3 class="text-xl font-bold text-anthrazit">Mette Büning</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6 min-h-[40px] flex items-center">Beisitzerin / Social Media</span>
+          <a href="mailto:buening@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">CB</div>
+          <h3 class="text-xl font-bold text-anthrazit">Carlo Börnhorst</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6">Beisitzer / Sponsoring</span>
+          <a href="mailto:boernhorst@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+        <div class="board-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:border-westfalia-red/20">
+          <div class="w-24 h-24 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-2xl font-bold text-gray-400">DD</div>
+          <h3 class="text-xl font-bold text-anthrazit">Dennis van Deenen</h3>
+          <span class="text-westfalia-red font-bold text-sm uppercase tracking-wider mt-1 mb-6 min-h-[40px] flex items-center">Sponsoring / Turnierleitung</span>
+          <a href="mailto:van-deenen@westfalia-osterwick.de" class="w-full py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-westfalia-red hover:text-white hover:border-westfalia-red transition-colors flex items-center justify-center gap-2">
+            ✉️ E-Mail schreiben
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-anthrazit text-gray-400 py-12 text-center text-xs mt-auto">
+    © <span id="year"></span> SV Westfalia Osterwick 1923 e.V.
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

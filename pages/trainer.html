@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trainer & Ansprechpartner – SV Westfalia Osterwick</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    
+    /* Hier beginnt das CSS für den Export-Teil */
+    .wo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .wo-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.2s; }
+    .wo-card:hover { transform: translateY(-2px); }
+    .wo-header { background: #f8fafc; padding: 14px 20px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+    .wo-title { margin: 0; font-size: 1rem; color: #1e293b; font-weight: 800; }
+    .wo-badge { background: #dc2626; color: white; font-size: 0.65rem; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; }
+    .wo-list { list-style: none; padding: 0; margin: 0; }
+    .wo-item { padding: 12px 20px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+    .wo-item:last-child { border-bottom: none; }
+    .wo-name { font-weight: 700; color: #0f172a; font-size: 0.95rem; display: block; }
+    .wo-role { font-size: 0.8rem; color: #64748b; display: block; margin-top: 1px; }
+    .wo-contact a { text-decoration: none; margin-left: 12px; font-size: 1.1rem; filter: grayscale(1); transition: 0.2s; }
+    .wo-contact a:hover { filter: grayscale(0); transform: scale(1.2); }
+    .wo-section-title { color: #dc2626; display: flex; items-center; gap: 1rem; margin-top: 3.5rem; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+    .wo-section-title::after { content: ""; flex: 1; height: 2px; background: #e2e8f0; border-radius: 2px; }
+    .wo-section-title:first-child { margin-top: 0; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 font-semibold hover:opacity-80 transition">
+        <div class="bg-red-600 text-white w-8 h-8 flex items-center justify-center rounded-lg font-bold">W</div>
+        <span class="hidden sm:inline">Westfalia Osterwick</span>
+      </a>
+      
+      <a href="../index.html" class="group flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-red-600 transition">
+        <span class="group-hover:-translate-x-1 transition-transform">←</span> Zurück zur Startseite
+      </a>
+    </div>
+  </header>
+
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-12 text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">Trainer & Ansprechpartner</h1>
+        <p class="text-lg text-slate-600 max-w-2xl">
+          Hier findest du die Kontaktdaten und Verantwortlichen aller Mannschaften der Fußballabteilung.
+        </p>
+      </div>
+
+      <div id="westfalia-trainer-container">
+        
+        <h2 class="wo-section-title">Senioren</h2>
+        <div class="wo-grid">
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">1. Herren</h3><span class="wo-badge">Senioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Carsten Schlamann</span><span class="wo-role">Trainer</span></div><div class="wo-contact"><a href="tel:015115717088">📞</a><a href="mailto:Test@Test.de">✉️</a></div></li>
+              <li class="wo-item"><div><span class="wo-name">Timo Grabowsky</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Steffen Warneke</span><span class="wo-role">Torwarttrainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Roland Kortüm</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Christian Vörding</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">2. Herren</h3><span class="wo-badge">Senioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Steffen Sicking</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Frank Blaschke</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">3. Herren</h3><span class="wo-badge">Senioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Fabian Leivermann</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Leon Thiemann</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">Damen</h3><span class="wo-badge">Senioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Pia Hörnemann</span><span class="wo-role">Trainerin</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Markus Schmidt</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Julia Meickmann</span><span class="wo-role">Betreuerin</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="wo-section-title">Junioren</h2>
+        <div class="wo-grid">
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">A-Jugend</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Andre Scheipers</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Heiko Hauling</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Max Bayer-Eynck</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Simon Hirtz</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">B-Jugend</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Sven Thiäner</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Finn Borgmann</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Ole Deitert</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">C-Jugend</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Niklas Boll</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Luca Thiäner</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">D-Jugend (1)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Stephan Gerling</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Thomas Overwaul</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Tyler Nun</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Lars Riermann</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">D-Jugend (2)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Timon Schüer</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Jannis Krella</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Lasse Wilkes</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">E-Jugend (1)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Leon Patte</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Theo Leifeld</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">E-Jugend (2)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Konrad Lipinski</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Philipp Bertels</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Henry Monse</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">E-Jugend (3)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Frank Kerkhoff</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Marco Göbig</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">F-Jugend (1)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Jennifer Roters</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Marcin Ciesielski</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Andy Thiemann</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">F-Jugend (2)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Guido Graute</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Vincent Koch</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Linus Leutermann</span><span class="wo-role">Betreuer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">G-Jugend (1)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Tobias Wiggers</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Laurenz Wolfert</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Abel Wübbeling</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">G-Jugend (2)</h3><span class="wo-badge">Junioren</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Marcus Vollmer</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Thomas Kern</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Torsten Lenger</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Lukas Ochtrup</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="wo-section-title">Juniorinnen</h2>
+        <div class="wo-grid">
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">B-Jugend</h3><span class="wo-badge">Juniorinnen</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Malena Reidegeld</span><span class="wo-role">Trainerin</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Pia Röckmann</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Laura Gövert</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">D-Jugend</h3><span class="wo-badge">Juniorinnen</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Marc Laurenz</span><span class="wo-role">Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Merle Bäumer</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Greta Horstmöller</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">E-Jugend</h3><span class="wo-badge">Juniorinnen</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Greta Schumacher</span><span class="wo-role">Trainerin</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Thomas Blackert</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Hannes Alfering</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+          <div class="wo-card">
+            <div class="wo-header"><h3 class="wo-title">F-Jugend</h3><span class="wo-badge">Juniorinnen</span></div>
+            <ul class="wo-list">
+              <li class="wo-item"><div><span class="wo-name">Hannah Knipper</span><span class="wo-role">Trainerin</span></div><div class="wo-contact"></div></li>
+              <li class="wo-item"><div><span class="wo-name">Marie Haverkock</span><span class="wo-role">Co-Trainer</span></div><div class="wo-contact"></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 text-center text-xs">
+    © <span id="year"></span> SV Westfalia Osterwick.
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

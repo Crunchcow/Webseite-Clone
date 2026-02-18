@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fußball - SV Westfalia Osterwick</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            westfalia: { red: '#dc2626', dark: '#991b1b', light: '#fef2f2' },
+            anthrazit: '#0f172a',
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-50 text-anthrazit flex flex-col min-h-screen">
+
+  <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 group">
+        <img src="../assets/img/wappen-farbig.png" alt="Wappen" class="h-10 w-auto object-contain group-hover:scale-110 transition-transform duration-300">
+        <div class="flex flex-col">
+          <span class="font-bold text-lg leading-none tracking-tight">Westfalia</span>
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Osterwick</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex gap-8 font-bold text-sm text-gray-600 items-center">
+        <a href="../index.html" class="hover:text-westfalia-red transition-colors">Startseite</a>
+        <a href="trainer.html" class="hover:text-westfalia-red transition-colors">Ansprechpartner</a>
+        <a href="../index.html#events" class="hover:text-westfalia-red transition-colors">Termine</a>
+      </nav>
+      <a href="../index.html" class="lg:hidden p-2 text-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="relative bg-anthrazit h-64 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1579952363873-27f3bde9be51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" class="absolute inset-0 w-full h-full object-cover opacity-50">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-end pb-10">
+        <h1 class="text-4xl md:text-5xl font-black text-white">Fußball</h1>
+        <p class="text-gray-300 mt-2 max-w-xl">Leidenschaft in Rot und Weiß. Von der Westfalia-Arena bis auswärts.</p>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <div class="mb-16">
+        <h2 class="text-2xl font-bold text-anthrazit mb-6 border-l-4 border-westfalia-red pl-4">Senioren</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <a href="1-mannschaft.html" class="group relative bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-westfalia-red hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+                <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
+                    BEZIRKSLIGA
+                </div>
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0565c6a?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-black text-2xl">1. Mannschaft</h3>
+                        <p class="text-sm opacity-90">Trainer: Carsten Schlamann</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center text-sm text-gray-600 mb-4">
+                        <span>Nächstes Spiel:</span>
+                        <span class="font-bold text-westfalia-red">Sonntag, 15:00</span>
+                    </div>
+                    <span class="block text-center bg-gray-50 text-anthrazit font-bold py-2 rounded-lg group-hover:bg-westfalia-red group-hover:text-white transition-colors">
+                        Zum Team & Tabelle →
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="group relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gray-800 flex items-center justify-center text-gray-500">
+                        <span class="text-4xl">⚽</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-xl">2. Mannschaft</h3>
+                        <p class="text-sm opacity-90">Kreisliga B</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-sm text-gray-500 block mb-4">Unsere Reserve. Ehrgeizig und kameradschaftlich.</span>
+                    <span class="text-westfalia-red font-bold text-sm group-hover:underline">Details ansehen →</span>
+                </div>
+            </a>
+
+            <a href="#" class="group relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gray-800 flex items-center justify-center text-gray-500">
+                        <span class="text-4xl">🍻</span> 
+                        </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-xl">3. Mannschaft</h3>
+                        <p class="text-sm opacity-90">Kreisliga C</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-sm text-gray-500 block mb-4">Die perfekte Mischung aus Ehrgeiz und Geselligkeit.</span>
+                    <span class="text-westfalia-red font-bold text-sm group-hover:underline">Details ansehen →</span>
+                </div>
+            </a>
+
+            <a href="#" class="group relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-xl">Alte Herren</h3>
+                        <p class="text-sm opacity-90">Training & Freundschaftsspiele</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-sm text-gray-500 block mb-4">Für alle, die es etwas ruhiger angehen lassen, aber den Ball noch lieben.</span>
+                    <span class="text-westfalia-red font-bold text-sm group-hover:underline">Details ansehen →</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold text-anthrazit mb-6 border-l-4 border-blue-500 pl-4">Jugendabteilung</h2>
+        <p class="text-gray-500 mb-8">Die Zukunft unseres Vereins. Von den Minikickern bis zur A-Jugend.</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            
+            <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">A</div>
+                <h3 class="font-bold text-anthrazit">A-Jugend</h3>
+                <p class="text-xs text-gray-400 mt-1">JSG mit Darfeld</p>
+            </a>
+
+            <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">B</div>
+                <h3 class="font-bold text-anthrazit">B-Jugend</h3>
+            </a>
+
+            <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">C</div>
+                <h3 class="font-bold text-anthrazit">C-Jugend</h3>
+            </a>
+            
+             <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">D</div>
+                <h3 class="font-bold text-anthrazit">D-Jugend</h3>
+            </a>
+
+             <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">E</div>
+                <h3 class="font-bold text-anthrazit">E-Jugend</h3>
+            </a>
+
+             <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">F</div>
+                <h3 class="font-bold text-anthrazit">F-Jugend</h3>
+            </a>
+            
+             <a href="#" class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-blue-300 hover:shadow-md transition text-center group">
+                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3 group-hover:bg-green-600 group-hover:text-white transition-colors">M</div>
+                <h3 class="font-bold text-anthrazit">Minis</h3>
+                <p class="text-xs text-gray-400 mt-1">Die Kleinsten</p>
+            </a>
+        </div>
+    </div>
+
+  </main>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12 relative z-20">
+    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100">
+        <div class="flex items-center gap-4">
+            <div class="bg-blue-50 p-3 rounded-full text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+            </div>
+            <div>
+                <h3 class="font-bold text-anthrazit text-lg">Kontakt gesucht?</h3>
+                <p class="text-gray-500 text-sm">Hier findest du eine Liste aller Trainer, Betreuer und Obleute mit Telefonnummern.</p>
+            </div>
+        </div>
+        <a href="trainer.html" class="whitespace-nowrap bg-white border-2 border-gray-100 text-anthrazit px-6 py-2.5 rounded-lg font-bold hover:border-westfalia-red hover:text-westfalia-red transition-colors">
+            Zur Trainerübersicht →
+        </a>
+    </div>
+</div>
+
+  <footer class="bg-anthrazit text-gray-400 py-8 border-t border-gray-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-sm">&copy; <span id="year"></span> SV Westfalia Osterwick 1923 e.V.</p>
+        <div class="flex justify-center gap-4 mt-4 text-xs">
+            <a href="impressum.html" class="hover:text-white">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+        </div>
+    </div>
+  </footer>
+
+  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+</body>
+</html>

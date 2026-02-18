@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SV Westfalia Osterwick 1923 e.V.</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            westfalia: {
+              red: '#dc2626',
+              dark: '#991b1b',
+              light: '#fef2f2',
+            },
+            anthrazit: '#0f172a',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .bg-pattern { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-anthrazit flex flex-col min-h-screen">
+
+  <div class="bg-anthrazit text-white px-4 py-2 text-sm font-medium relative z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+        <span><strong>Live:</strong> Großes Hallenturnier der E-Jugend am Wochenende!</span>
+      </div>
+      <a href="#events" class="hover:text-westfalia-red transition underline decoration-westfalia-red underline-offset-2">Zum Spielplan →</a>
+    </div>
+  </div>
+
+  <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="assets/img/wappen-farbig.png" 
+             alt="Wappen" 
+             class="h-10 w-auto object-contain group-hover:scale-110 transition-transform duration-300">
+        
+        <div class="flex flex-col">
+          <span class="font-bold text-lg leading-none tracking-tight">Westfalia</span>
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Osterwick</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex gap-8 font-bold text-sm text-gray-600 items-center">
+        <a href="#news" class="hover:text-westfalia-red transition-colors">News</a>
+        
+        <div class="relative group h-full flex items-center">
+            <button class="flex items-center gap-1 hover:text-westfalia-red transition-colors py-6">
+              Sportangebot
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-50 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute top-full left-0 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+              <a href="pages/fussball.html" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition">Fußball & Trainer</a>
+              <a href="pages/breitensport.html" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Breitensport</a>
+              <a href="#" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Tennis</a>
+              <a href="#" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Leichtathletik</a>
+            </div>
+        </div>
+
+        <div class="relative group h-full flex items-center">
+            <button class="flex items-center gap-1 hover:text-westfalia-red transition-colors py-6">
+              Der Verein
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-50 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute top-full left-0 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+              <a href="pages/vorstand.html" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition">Vorstand</a>
+              <a href="#" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Jugend & Freizeit</a>
+              <a href="#" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">BSG Heim</a>
+            </div>
+        </div>
+
+        <a href="#events" class="hover:text-westfalia-red transition-colors">Events</a>
+      </nav>
+
+      <div class="hidden md:flex gap-4 items-center">
+        <a href="#" class="bg-westfalia-red text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-westfalia-dark transition shadow-lg shadow-red-200 transform hover:-translate-y-0.5">
+          Mitglied werden
+        </a>
+      </div>
+
+      <button id="burger-btn" class="lg:hidden p-2 text-gray-600 hover:text-westfalia-red">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="relative bg-white overflow-hidden w-full">
+    <div class="absolute inset-0 z-0 w-full h-full">
+      <img src="assets/img/100Jahre.jpg" 
+           alt="100 Jahre Westfalia Hintergrund" 
+           class="w-full h-full object-fill opacity-15 pointer-events-none">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-white/10"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="relative pb-8 bg-transparent sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-20 px-4 sm:px-6 lg:px-8">
+        <main class="mt-10 mx-auto max-w-7xl sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28">
+          
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+             <img src="assets/img/wappen-farbig.png" 
+                  alt="Westfalia Wappen Groß" 
+                  class="h-40 w-40 md:h-80 md:w-80 object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] animate-in zoom-in duration-700">
+             
+             <div class="text-center md:text-left">
+                <h1 class="text-4xl tracking-tight font-black text-anthrazit sm:text-5xl md:text-6xl">
+                  <span class="block">Ein Verein.</span>
+                  <span class="block text-westfalia-red">Viele Leidenschaften.</span>
+                </h1>
+                <p class="mt-4 text-base text-gray-700 sm:mt-5 sm:text-lg md:mt-5 md:text-xl font-bold">
+                   <span class="bg-white/40 backdrop-blur-sm rounded-md px-1">
+                     Ob auf dem Rasen, dem Tennisplatz oder in der Turnhalle – beim SV Westfalia Osterwick finden über 1.000 Mitglieder ihre sportliche Heimat.
+                   </span>
+                </p>
+             </div>
+          </div>
+
+          <div class="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
+            <a href="#abteilungen" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-2xl text-white bg-westfalia-red hover:bg-westfalia-dark md:py-4 md:text-lg transition shadow-xl shadow-red-200">
+              Sportangebot
+            </a>
+            <a href="pages/trainer.html" class="w-full flex items-center justify-center px-8 py-3 border-2 border-gray-100 text-base font-bold rounded-2xl text-anthrazit bg-white/60 backdrop-blur-sm hover:bg-gray-50 md:py-4 md:text-lg transition">
+              Ansprechpartner
+            </a>
+          </div>
+
+        </main>
+      </div>
+    </div>
+    
+    <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 h-64 lg:h-full overflow-hidden opacity-85">
+      <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1526676037777-05a232554f77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent"></div>
+    </div>
+  </section>
+
+  <section id="abteilungen" class="py-20 bg-pattern border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-base text-westfalia-red font-bold tracking-wide uppercase">Unsere Sparten</h2>
+        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-anthrazit sm:text-4xl">
+          Was möchtest du machen?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <a href="pages/fussball.html" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-westfalia-red/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">⚽</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Fußball</h3>
+            <p class="text-gray-500 text-sm mb-4">Von Minikickern bis Alte Herren. Unsere größte Abteilung.</p>
+            <span class="text-westfalia-red font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Zu den Teams <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        <a href="pages/breitensport.html" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-400/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🧘</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Breitensport</h3>
+            <p class="text-gray-500 text-sm mb-4">Turnen, Fitness, Yoga & Rehasport für jedes Alter.</p>
+            <span class="text-blue-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Kursplan ansehen <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        <a href="#" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-orange-400/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🏃</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Leichtathletik</h3>
+            <p class="text-gray-500 text-sm mb-4">Laufen, Springen, Werfen. Training & Sportabzeichen.</p>
+            <span class="text-orange-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Trainingszeiten <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        
+        <a href="#" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-lime-500/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-lime-500 to-green-600 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🎾</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Tennis</h3>
+            <p class="text-gray-500 text-sm mb-4">Gepflegte Ascheplätze und eine starke Gemeinschaft.</p>
+            <span class="text-lime-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Platz buchen <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+              <h2 class="text-3xl font-extrabold text-anthrazit">Events & Turniere</h2>
+              <p class="text-gray-500 mt-2">Das ist los in der Zweifachsporthalle und im Westfalia-Stadion.</p>
+            </div>
+            <a href="#" class="hidden md:inline-flex items-center font-bold text-westfalia-red hover:underline">
+              Kalender öffnen →
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="relative bg-anthrazit rounded-3xl overflow-hidden shadow-2xl text-white flex flex-col justify-end min-h-[400px] group">
+                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                     class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Hallenturnier">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                <div class="relative p-8 z-10">
+                    <span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Highlight</span>
+                    <h3 class="text-3xl font-bold mb-2">Volksbank Hallenturnier</h3>
+                    <p class="text-gray-300 mb-6 max-w-md">Drei Tage Budenzauber in Osterwick. Von den Minis bis zu den Senioren – Spannung garantiert!</p>
+                    <button class="bg-white text-anthrazit px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition">Spielpläne ansehen</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4 p-4 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md transition">
+                    <div class="bg-white border border-gray-200 w-16 h-16 rounded-xl flex flex-col items-center justify-center shadow-sm shrink-0">
+                        <span class="text-xs font-bold text-red-500 uppercase">JUN</span>
+                        <span class="text-xl font-black text-anthrazit">15</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-anthrazit">Generalversammlung</h4>
+                        <p class="text-sm text-gray-500">20:00 Uhr • Vereinsheim</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md transition">
+                    <div class="bg-white border border-gray-200 w-16 h-16 rounded-xl flex flex-col items-center justify-center shadow-sm shrink-0">
+                        <span class="text-xs font-bold text-red-500 uppercase">AUG</span>
+                        <span class="text-xl font-black text-anthrazit">10</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-anthrazit">Saisonstart 24/25</h4>
+                        <p class="text-sm text-gray-500">Alle Seniorenteams Heimspiel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="news" class="py-20 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-10 border-l-4 border-westfalia-red pl-4">Neues aus dem Verein</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <article class="group cursor-pointer">
+                <div class="aspect-video bg-gray-800 rounded-xl overflow-hidden mb-4 relative">
+                    <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 left-3 bg-westfalia-red text-white text-xs font-bold px-2 py-1 rounded">Fußball</span>
+                </div>
+                <h3 class="font-bold text-xl mb-2 group-hover:text-westfalia-red transition-colors">Derbysieg gegen Darfeld</h3>
+                <p class="text-gray-400 text-sm">Ein spannendes Spiel endet mit 3:1 für Westfalia...</p>
+            </article>
+            <article class="group cursor-pointer">
+                <div class="aspect-video bg-gray-800 rounded-xl overflow-hidden mb-4 relative">
+                    <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 left-3 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Breitensport</span>
+                </div>
+                <h3 class="font-bold text-xl mb-2 group-hover:text-westfalia-red transition-colors">Neuer Yoga-Kurs startet</h3>
+                <p class="text-gray-400 text-sm">Immer dienstags in der kleinen Turnhalle.</p>
+            </article>
+            <article class="group cursor-pointer">
+                <div class="aspect-video bg-gray-800 rounded-xl overflow-hidden mb-4 relative">
+                    <img src="https://images.unsplash.com/photo-1626245053744-933393526978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 left-3 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">Tennis</span>
+                </div>
+                <h3 class="font-bold text-xl mb-2 group-hover:text-westfalia-red transition-colors">Plätze bereit für den Sommer</h3>
+                <p class="text-gray-400 text-sm">Die Ascheplätze wurden erfolgreich aufbereitet.</p>
+            </article>
+        </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-50 border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
+        Starke Partner an unserer Seite
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+        
+        <a href="#" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-[#ff6600]">
+                Volksbank
+            </div>
+        </a>
+
+        <a href="#" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-[#ff0000]">
+                Sparkasse
+            </div>
+        </a>
+
+        <a href="#" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-blue-600">
+                Intersport
+            </div>
+        </a>
+
+        <a href="#" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-green-600">
+                Brauerei
+            </div>
+        </a>
+
+        <a href="#" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-yellow-500">
+                Autohaus
+            </div>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="pages/sponsoren.html" class="inline-flex items-center text-sm font-bold text-westfalia-red hover:text-westfalia-dark transition-colors group">
+          Alle Partner ansehen 
+          <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-anthrazit text-gray-400 py-12 border-t border-gray-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left grid md:grid-cols-4 gap-8">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center justify-center md:justify-start gap-2 text-white font-bold text-xl mb-4">
+           <div class="w-8 h-8 bg-westfalia-red rounded flex items-center justify-center">W</div> Westfalia Osterwick
+        </div>
+        <p class="text-sm max-w-md mx-auto md:mx-0">Dein Sportverein für Rosendahl. Gemeinschaft, Fairness und Leidenschaft seit über 100 Jahren.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Verein</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="pages/impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+          <li><a href="pages/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+          <li><a href="pages/downloads.html" class="hover:text-white transition-colors">Downloads & Formulare</a></li>
+          <li><a href="pages/trainer.html" class="hover:text-white transition-colors">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Kontakt</h4>
+        <p class="text-sm">Sportplatz Westfalia<br>Musterstraße 1<br>48727 Rosendahl</p>
+      </div>
+    </div>
+    <div class="text-center text-xs border-t border-gray-800 pt-8 mt-8">
+      &copy; <span id="year"></span> SV Westfalia Osterwick 1923 e.V.
+    </div>
+  </footer>
+
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-xl transition-all duration-300 overflow-y-auto">
+    <div class="p-6 flex flex-col h-full">
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-bold text-xl">Menü</span>
+        <button id="close-menu" class="p-2 text-gray-500 hover:text-westfalia-red bg-gray-100 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-2xl font-bold text-center">
+        <a href="#" class="hover:text-westfalia-red">Startseite</a>
+        <a href="#news" class="hover:text-westfalia-red">News</a>
+        <a href="pages/fussball.html" class="text-westfalia-red bg-red-50 py-3 rounded-xl">Trainer & Teams</a>
+        <a href="pages/vorstand.html" class="hover:text-westfalia-red">Vorstand</a>
+        <a href="#abteilungen" class="hover:text-westfalia-red">Abteilungen</a>
+        <a href="#events" class="hover:text-westfalia-red">Events</a>
+        <a href="pages/impressum.html" class="hover:text-westfalia-red">Impressum</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const burgerBtn = document.getElementById('burger-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (burgerBtn && closeBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
+  </script>
+</body>
+</html>
