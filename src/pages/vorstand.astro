@@ -1,0 +1,39 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PersonCard from '../components/PersonCard.astro';
+import { vorstand } from '../data/vorstand';
+---
+
+<Layout title="Vorstand - SV Westfalia Osterwick">
+  <Header />
+
+  <section class="py-16 bg-gradient-to-br from-red-50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-black text-anthrazit mb-4">Der Vorstand</h1>
+        <p class="text-lg text-gray-600 max-w-3xl">
+          Wir kÃ¼mmern uns um die Organisation und die Zukunft des Vereins.
+          Hast du Fragen oder Anregungen? Sprich uns gerne an!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {vorstand.map((person) => (
+          <PersonCard
+            initials={person.initials}
+            gradientFrom={person.gradientFrom}
+            gradientTo={person.gradientTo}
+            name={person.name}
+            role={person.role}
+            email={person.email}
+            phone={person.phone}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,138 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PersonCard from '../components/PersonCard.astro';
+import { abteilungsleiter, sonderfunktionen } from '../data/ansprechpartner';
+---
+
+<Layout title="Ansprechpartner - SV Westfalia Osterwick" description="Alle Ansprechpartner, Abteilungsleiter und Sonderfunktionen des SV Westfalia Osterwick auf einen Blick.">
+  <Header />
+
+  <section class="py-16 bg-gradient-to-br from-red-50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header -->
+      <div class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-black text-anthrazit mb-4">Ansprechpartner</h1>
+        <p class="text-lg text-gray-600 max-w-3xl">
+          Hier findest du die richtigen Ansprechpartner â€“ egal ob Abteilungsleiter, Sonderfunktion oder Trainer.
+          Du willst direkt Kontakt aufnehmen? <a href="/kontakt" class="text-westfalia-red font-bold hover:underline">Zum Kontaktformular â†’</a>
+        </p>
+      </div>
+
+      <!-- Sektion 1: Abteilungsleiter -->
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-1 h-8 bg-westfalia-red rounded-full"></div>
+          <h2 class="text-2xl font-black text-anthrazit">Abteilungsleiter</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {abteilungsleiter.map((person) => (
+            <PersonCard
+              initials={person.initials}
+              gradientFrom={person.gradientFrom}
+              gradientTo={person.gradientTo}
+              name={person.name}
+              role={person.role}
+              email={person.email}
+              phone={person.phone}
+              compact
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Sektion 2: Sonderfunktionen -->
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-1 h-8 bg-gray-400 rounded-full"></div>
+          <h2 class="text-2xl font-black text-anthrazit">Sonderfunktionen</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {sonderfunktionen.map((person) => (
+            <PersonCard
+              initials={person.initials}
+              gradientFrom={person.gradientFrom}
+              gradientTo={person.gradientTo}
+              name={person.name}
+              role={person.role}
+              email={person.email}
+              phone={person.phone}
+              compact
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Sektion 3: Trainer & Betreuerstab -->
+      <div class="mb-10">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-1 h-8 bg-blue-500 rounded-full"></div>
+          <h2 class="text-2xl font-black text-anthrazit">Trainer &amp; Betreuerstab</h2>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <p class="text-gray-600 mb-6">
+            Trainer und Betreuer sind direkt den jeweiligen Teams zugeordnet. Du findest ihre Kontaktdaten auf der Teamseite.
+          </p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <a href="/fussball" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-westfalia-red/40 hover:bg-red-50 transition-all group">
+              <span class="text-2xl">âš½</span>
+              <div>
+                <p class="font-bold text-anthrazit text-sm group-hover:text-westfalia-red transition-colors">FuÃŸball â€“ alle Teams</p>
+                <p class="text-xs text-gray-500">Trainer je Mannschaft</p>
+              </div>
+              <span class="ml-auto text-westfalia-red opacity-0 group-hover:opacity-100 transition-opacity">â†’</span>
+            </a>
+            <a href="/breitensport" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-emerald-400/40 hover:bg-emerald-50 transition-all group">
+              <span class="text-2xl">ðŸ’ª</span>
+              <div>
+                <p class="font-bold text-anthrazit text-sm group-hover:text-emerald-700 transition-colors">Breitensport</p>
+                <p class="text-xs text-gray-500">Kursleiter &amp; Ãœbungsleiter</p>
+              </div>
+              <span class="ml-auto text-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity">â†’</span>
+            </a>
+            <a href="/badminton" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-purple-400/40 hover:bg-purple-50 transition-all group">
+              <span class="text-2xl">ðŸ¸</span>
+              <div>
+                <p class="font-bold text-anthrazit text-sm group-hover:text-purple-700 transition-colors">Badminton</p>
+                <p class="text-xs text-gray-500">Trainer &amp; Ansprechpartner</p>
+              </div>
+              <span class="ml-auto text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">â†’</span>
+            </a>
+            <a href="/tennis" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-yellow-400/40 hover:bg-yellow-50 transition-all group">
+              <span class="text-2xl">ðŸŽ¾</span>
+              <div>
+                <p class="font-bold text-anthrazit text-sm group-hover:text-yellow-700 transition-colors">Tennis</p>
+                <p class="text-xs text-gray-500">Trainer &amp; Ansprechpartner</p>
+              </div>
+              <span class="ml-auto text-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity">â†’</span>
+            </a>
+            <a href="/leichtathletik" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:border-orange-400/40 hover:bg-orange-50 transition-all group">
+              <span class="text-2xl">ðŸƒ</span>
+              <div>
+                <p class="font-bold text-anthrazit text-sm group-hover:text-orange-700 transition-colors">Leichtathletik</p>
+                <p class="text-xs text-gray-500">Trainer &amp; Ansprechpartner</p>
+              </div>
+              <span class="ml-auto text-orange-600 opacity-0 group-hover:opacity-100 transition-opacity">â†’</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Vorstand -->
+      <div class="bg-anthrazit rounded-2xl p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <p class="font-bold text-lg">Vereinsleitung</p>
+          <p class="text-gray-400 text-sm">Informationen zum Vorstand findest du auf der Vorstandsseite.</p>
+        </div>
+        <a href="/vorstand" class="shrink-0 px-6 py-2.5 bg-westfalia-red hover:bg-red-700 text-white font-bold rounded-xl transition-colors text-sm">
+          Zum Vorstand â†’
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

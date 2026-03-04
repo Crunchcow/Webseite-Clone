@@ -1,0 +1,292 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news', ({ data }) => data.published !== false);
+const news = allNews
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const allEvents = await getCollection('events', ({ data }) => data.published !== false);
+const events = allEvents.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+const highlightEvent = events.find(e => e.data.highlight) ?? events[0];
+const listEvents = events.filter(e => !e.data.highlight);
+
+const fmtMonth = (d: Date) =>
+  d.toLocaleDateString('de-DE', { month: 'short' }).toUpperCase().replace('.', '');
+const fmtDay = (d: Date) => d.getDate();
+---
+
+<Layout title="SV Westfalia Osterwick 1923 e.V.">
+  <Header />
+
+  <section class="relative bg-white overflow-hidden w-full">
+    <div class="absolute inset-0 z-0 w-full h-full">
+      <img src="/assets/img/100Jahre.jpg" 
+           alt="100 Jahre Westfalia Hintergrund" 
+           class="w-full h-full object-fill opacity-15 pointer-events-none">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-white/10"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="relative pb-8 bg-transparent sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-20 px-4 sm:px-6 lg:px-8">
+        <main class="mt-10 mx-auto max-w-7xl sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28">
+          
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+             <img src="/assets/img/wappen-farbig.png" 
+                  alt="Westfalia Wappen Groß" 
+                  class="h-40 w-40 md:h-80 md:w-80 object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)]">
+             
+             <div class="text-center md:text-left">
+                <h1 class="text-4xl tracking-tight font-black text-anthrazit sm:text-5xl md:text-6xl">
+                  <span class="block">Ein Verein.</span>
+                  <span class="block text-westfalia-red">Viele Leidenschaften.</span>
+                </h1>
+                <p class="mt-4 text-base text-gray-700 sm:mt-5 sm:text-lg md:mt-5 md:text-xl font-bold">
+                   <span class="bg-white/40 backdrop-blur-sm rounded-md px-1">
+                     Ob auf dem Rasen, dem Tennisplatz oder in der Turnhalle – beim SV Westfalia Osterwick finden über 1.000 Mitglieder ihre sportliche Heimat.
+                   </span>
+                </p>
+             </div>
+          </div>
+
+          <div class="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
+            <a href="#abteilungen" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-2xl text-white bg-westfalia-red hover:bg-westfalia-dark md:py-4 md:text-lg transition shadow-xl shadow-red-200">
+              Sportangebot
+            </a>
+            <a href="/fussball#mannschaften" class="w-full flex items-center justify-center px-8 py-3 border-2 border-gray-100 text-base font-bold rounded-2xl text-anthrazit bg-white/60 backdrop-blur-sm hover:bg-gray-50 md:py-4 md:text-lg transition">
+              Ansprechpartner
+            </a>
+          </div>
+
+        </main>
+      </div>
+    </div>
+    
+    <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 h-64 lg:h-full overflow-hidden opacity-85">
+      <img class="h-full w-full object-cover" src="/assets/img/WO1Herren.jpg" alt="1. Mannschaft Westfalia">
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent"></div>
+    </div>
+  </section>
+
+  <section id="abteilungen" class="py-20 bg-pattern border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-base text-westfalia-red font-bold tracking-wide uppercase">Unsere Sparten</h2>
+        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-anthrazit sm:text-4xl">
+          Was möchtest du machen?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <a href="/fussball" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-westfalia-red/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">⚽</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Fußball</h3>
+            <p class="text-gray-500 text-sm mb-4">Von Minikickern bis Alte Herren. Unsere größte Abteilung.</p>
+            <span class="text-westfalia-red font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Zu den Teams <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        <a href="/breitensport" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-400/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🧘</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Breitensport</h3>
+            <p class="text-gray-500 text-sm mb-4">Turnen, Fitness, Yoga & Rehasport für jedes Alter.</p>
+            <span class="text-blue-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Kursplan ansehen <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        <a href="/badminton" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-purple-400/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🏸</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Badminton</h3>
+            <p class="text-gray-500 text-sm mb-4">Schnell, technisch, dynamisch – Training für Freizeit und Wettkampf.</p>
+            <span class="text-purple-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Trainingsinfos <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        <a href="/leichtathletik" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-orange-400/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🏃</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Leichtathletik</h3>
+            <p class="text-gray-500 text-sm mb-4">Laufen, Springen, Werfen. Training & Sportabzeichen.</p>
+            <span class="text-orange-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Trainingszeiten <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+        
+        <a href="/tennis" class="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-lime-500/30 block h-full">
+          <div class="h-32 bg-gradient-to-br from-lime-500 to-green-600 flex items-center justify-center">
+            <span class="text-5xl group-hover:scale-110 transition-transform duration-300">🎾</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-anthrazit mb-2">Tennis</h3>
+            <p class="text-gray-500 text-sm mb-4">Gepflegte Ascheplätze und eine starke Gemeinschaft.</p>
+            <span class="text-lime-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              Platz buchen <span aria-hidden="true">&rarr;</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+              <h2 class="text-3xl font-extrabold text-anthrazit">Events &amp; Turniere</h2>
+              <p class="text-gray-500 mt-2">Das ist los in der Zweifachsporthalle und im Westfalia-Stadion.</p>
+            </div>
+            <a href="/kontakt" class="hidden md:inline-flex items-center font-bold text-westfalia-red hover:underline">
+              Kalender anfragen →
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {highlightEvent && (
+            <div class="relative bg-anthrazit rounded-3xl overflow-hidden shadow-2xl text-white flex flex-col justify-end min-h-[400px] group">
+              {highlightEvent.data.highlightImage && (
+                <img
+                  src={highlightEvent.data.highlightImage}
+                  class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                  alt={highlightEvent.data.title}
+                />
+              )}
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+              <div class="relative p-8 z-10">
+                <span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Highlight</span>
+                <h3 class="text-3xl font-bold mb-2">{highlightEvent.data.title}</h3>
+                {highlightEvent.data.highlightDescription && (
+                  <p class="text-gray-300 mb-4 max-w-md">{highlightEvent.data.highlightDescription}</p>
+                )}
+                <p class="text-sm text-gray-400">
+                  {fmtDay(highlightEvent.data.date)}. {fmtMonth(highlightEvent.data.date)}
+                  {highlightEvent.data.time && <span> • {highlightEvent.data.time}</span>}
+                  {highlightEvent.data.location && <span> • {highlightEvent.data.location}</span>}
+                </p>
+              </div>
+            </div>
+          )}
+
+          <div class="flex flex-col gap-4">
+            {listEvents.map((event) => (
+              <div class="flex items-center gap-4 p-4 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md transition">
+                <div class="bg-white border border-gray-200 w-16 h-16 rounded-xl flex flex-col items-center justify-center shadow-sm shrink-0">
+                  <span class="text-xs font-bold text-red-500 uppercase">{fmtMonth(event.data.date)}</span>
+                  <span class="text-xl font-black text-anthrazit">{fmtDay(event.data.date)}</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-anthrazit">{event.data.title}</h4>
+                  <p class="text-sm text-gray-500">
+                    {event.data.time && <span>{event.data.time}</span>}
+                    {event.data.time && event.data.location && <span> • </span>}
+                    {event.data.location && <span>{event.data.location}</span>}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="news" class="py-20 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-10 border-l-4 border-westfalia-red pl-4">Neues aus dem Verein</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {news.map((article) => (
+            <article class="group cursor-pointer">
+              <div class="aspect-video bg-gray-800 rounded-xl overflow-hidden mb-4 relative">
+                {article.data.image ? (
+                  <img
+                    src={article.data.image}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt={article.data.imageAlt ?? article.data.title}
+                  />
+                ) : (
+                  <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                    <span class="text-4xl">📰</span>
+                  </div>
+                )}
+                <span class={`absolute bottom-3 left-3 ${article.data.categoryColor} text-white text-xs font-bold px-2 py-1 rounded`}>
+                  {article.data.category}
+                </span>
+              </div>
+              <h3 class="font-bold text-xl mb-2 group-hover:text-westfalia-red transition-colors">{article.data.title}</h3>
+              <p class="text-gray-400 text-sm">{article.data.excerpt}</p>
+            </article>
+          ))}
+        </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-50 border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
+        Starke Partner an unserer Seite
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+        
+        <a href="/sponsoren" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-[#ff6600]">
+                Volksbank
+            </div>
+        </a>
+
+        <a href="/sponsoren" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-[#ff0000]">
+                Sparkasse
+            </div>
+        </a>
+
+        <a href="/sponsoren" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-blue-600">
+                Intersport
+            </div>
+        </a>
+
+        <a href="/sponsoren" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-green-600">
+                Brauerei
+            </div>
+        </a>
+
+        <a href="/sponsoren" class="group flex justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+             <div class="h-12 flex items-center justify-center text-xl font-black text-gray-800 group-hover:text-yellow-500">
+                Autohaus
+            </div>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/sponsoren" class="inline-flex items-center text-sm font-bold text-westfalia-red hover:text-westfalia-dark transition-colors group">
+          Alle Sponsoren ansehen 
+          <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

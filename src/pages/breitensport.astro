@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Breitensport - SV Westfalia Osterwick">
+  <Header />
+
+  <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">🧘 Breitensport</span>
+        <h1 class="text-5xl font-black text-anthrazit mt-4 mb-6">Fitness, Turnen & Gesundheit</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Von Kinderturnen über Yoga bis Rehasport – unser vielfältiges Kursangebot in der Zweifachsporthalle 
+          bietet für jedes Alter und Fitnesslevel das Richtige.
+        </p>
+      </div>
+
+      <div class="mb-16 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-2xl">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl">ℹ️</span>
+          <div>
+            <h3 class="font-bold text-lg text-anthrazit mb-2">Kursanmeldung Online</h3>
+            <p class="text-gray-700 mb-3">
+              Die Anmeldung zu unseren Breitensport-Kursen erfolgt über unser Online-Portal. 
+              Dort findest du alle aktuellen Kurszeiten und kannst dich direkt anmelden.
+            </p>
+            <a href="http://89.167.0.28/" target="_blank" rel="noopener" 
+               class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition-all">
+              Zur Kursanmeldung →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        
+        <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-red-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            🤸
+          </div>
+          <h3 class="text-xl font-bold text-anthrazit mb-3">Kinderturnen</h3>
+          <p class="text-gray-600 mb-4">
+            Spielerisches Heranführen an Bewegung und Sport. Für Kids ab 3 Jahren.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>✓ Eltern-Kind-Turnen</li>
+            <li>✓ Kleinkinderturnen</li>
+            <li>✓ Koordination & Motorik</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            🧘
+          </div>
+          <h3 class="text-xl font-bold text-anthrazit mb-3">Yoga & Pilates</h3>
+          <p class="text-gray-600 mb-4">
+            Entspannung, Flexibilität und Körperbewusstsein für alle Altersgruppen.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>✓ Hatha Yoga</li>
+            <li>✓ Pilates</li>
+            <li>✓ Meditation</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            💪
+          </div>
+          <h3 class="text-xl font-bold text-anthrazit mb-3">Fitness & Gymnastik</h3>
+          <p class="text-gray-600 mb-4">
+            Kraftaufbau, Ausdauer und Beweglichkeit in verschiedenen Schwierigkeitsstufen.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>✓ Bauch-Beine-Po</li>
+            <li>✓ Rückenfit</li>
+            <li>✓ Funktionelles Training</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            🩺
+          </div>
+          <h3 class="text-xl font-bold text-anthrazit mb-3">Rehasport</h3>
+          <p class="text-gray-600 mb-4">
+            Zertifizierter Rehabilitationssport auf ärztliche Verordnung.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>✓ Orthopädische Reha</li>
+            <li>✓ Herz-Kreislauf</li>
+            <li>✓ Sturzprävention</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            👵
+          </div>
+          <h3 class="text-xl font-bold text-anthrazit mb-3">Seniorensport</h3>
+          <p class="text-gray-600 mb-4">
+            Sanfte Bewegung und Mobilität für die Generation 60+.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>✓ Seniorengymnastik</li>
+            <li>✓ Gleichgewichtstraining</li>
+            <li>✓ Geselligkeit</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            🏐
+          </div>
+          <h3 class="text-xl font-bold text-anthrazit mb-3">Ballsport</h3>
+          <p class="text-gray-600 mb-4">
+            Volleyball, Basketball und andere Mannschaftssportarten.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>✓ Freizeitvolleyball</li>
+            <li>✓ Basketball</li>
+            <li>✓ Ballspiele mixed</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <h2 class="text-3xl font-bold mb-4">Schnupperstunde vereinbaren</h2>
+        <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
+          Du möchtest einen Kurs erst mal ausprobieren? Kein Problem! 
+          Melde dich bei unserer Abteilungsleitung und vereinbare eine kostenlose Schnupperstunde.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 py-4 rounded-2xl transition-all inline-flex items-center justify-center">
+            Ansprechpartner kontaktieren
+          </a>
+          <a href="http://89.167.0.28/" target="_blank" rel="noopener" class="bg-blue-800 hover:bg-blue-900 text-white font-bold px-8 py-4 rounded-2xl transition-all inline-flex items-center justify-center">
+            Direkt anmelden →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

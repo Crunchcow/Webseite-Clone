@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getTeamsBySection } from '../lib/trainerData';
+
+const teamSections = getTeamsBySection();
+
+const sectionAnchor = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+---
+
+<Layout title="Fußball - SV Westfalia Osterwick">
+  <Header />
+
+  <section class="py-20 bg-gradient-to-br from-red-50 via-white to-red-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-westfalia-red font-bold uppercase tracking-wider text-sm">⚽ Fußball</span>
+        <h1 class="text-5xl font-black text-anthrazit mt-4 mb-6">Westfalia Osterwick Fußball</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Unsere größte Abteilung mit über 400 Mitgliedern. Von den Bambini bis zu den Alten Herren – 
+          hier findet jeder sein Team.
+        </p>
+      </div>
+
+      <div id="mannschaften" class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 mb-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-3xl font-bold text-anthrazit">Mannschaften</h2>
+            <p class="text-gray-600 mt-2">Für jede Mannschaft eine eigene Seite mit Ansprechpartnern.</p>
+          </div>
+        </div>
+
+        {teamSections.length > 0 && (
+          <div id="team-filter" class="flex flex-wrap gap-2 mb-8">
+            <button
+              type="button"
+              data-filter="alle"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold transition bg-red-50 text-westfalia-red"
+            >
+              Alle
+            </button>
+            {teamSections.map((section) => (
+              <button
+                type="button"
+                data-filter={sectionAnchor(section.section)}
+                class="px-3 py-1.5 rounded-full text-sm font-semibold transition bg-gray-100 hover:bg-red-50 text-gray-700 hover:text-westfalia-red"
+              >
+                {section.section}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {teamSections.length > 0 ? (
+          <div class="space-y-8">
+            {teamSections.map((section) => (
+              <div id={`bereich-${sectionAnchor(section.section)}`} class="team-section" data-section={sectionAnchor(section.section)}>
+                <h3 class="text-2xl font-extrabold text-anthrazit mb-4">{section.section}</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                  {section.teams.map((team) => (
+                    <a
+                      href={`/fussball/${team.slug}`}
+                      class="group rounded-2xl border border-gray-200 bg-white p-4 hover:border-westfalia-red/40 hover:shadow-lg transition"
+                    >
+                      <h4 class="font-bold text-base text-anthrazit group-hover:text-westfalia-red transition-colors">{team.name}</h4>
+                      <p class="text-sm font-semibold text-westfalia-red mt-2">Teamseite öffnen →</p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="rounded-2xl border border-amber-200 bg-amber-50 p-6 text-amber-900 text-sm">
+            Keine Mannschaftsdaten gefunden. Prüfe den Inhalt von <span class="font-bold">src/content/trainer-export.html</span>.
+          </div>
+        )}
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-100">
+          <div class="text-4xl font-black text-westfalia-red mb-2">400+</div>
+          <div class="text-gray-600 font-semibold">Aktive Mitglieder</div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-100">
+          <div class="text-4xl font-black text-westfalia-red mb-2">15</div>
+          <div class="text-gray-600 font-semibold">Mannschaften</div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-100">
+          <div class="text-4xl font-black text-westfalia-red mb-2">100</div>
+          <div class="text-gray-600 font-semibold">Jahre Tradition</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterRoot = document.getElementById('team-filter');
+      if (!filterRoot) return;
+
+      const buttons = Array.from(filterRoot.querySelectorAll('button[data-filter]'));
+      const sections = Array.from(document.querySelectorAll('.team-section'));
+
+      const setFilter = (value) => {
+        sections.forEach((section) => {
+          const sectionValue = section.getAttribute('data-section');
+          const isVisible = value === 'alle' || sectionValue === value;
+          section.classList.toggle('hidden', !isVisible);
+        });
+
+        buttons.forEach((button) => {
+          const isActive = button.getAttribute('data-filter') === value;
+          button.classList.toggle('bg-red-50', isActive);
+          button.classList.toggle('text-westfalia-red', isActive);
+          button.classList.toggle('bg-gray-100', !isActive);
+          button.classList.toggle('text-gray-700', !isActive);
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const value = button.getAttribute('data-filter') || 'alle';
+          setFilter(value);
+        });
+      });
+
+      setFilter('alle');
+    });
+  </script>
+</Layout>

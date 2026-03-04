@@ -1,0 +1,26 @@
+---
+import DepartmentPage from '../components/DepartmentPage.astro';
+---
+
+<DepartmentPage
+  title="Leichtathletik - SV Westfalia Osterwick"
+  description="Leichtathletik beim SV Westfalia Osterwick: Training, Zielgruppen und Ansprechpartner."
+  bgGradient="from-orange-50 via-white to-red-50"
+  accentColor="text-orange-600"
+  emoji="🏃"
+  label="Leichtathletik"
+  heading="Laufen, Springen, Werfen"
+  intro="Unsere Leichtathletik-Abteilung befindet sich im Aufbau. Für Interessierte bieten wir bereits erste Einstiegsmöglichkeiten und direkte Kontaktwege."
+  cards={[
+    { title: 'Für wen?',    text: 'Kinder, Jugendliche und Erwachsene mit Freude an Grundlagentraining und Vielseitigkeit.' },
+    { title: 'Schwerpunkte',text: 'Sprint, Ausdauer, Sprungdisziplinen, Wurftraining und sportartübergreifende Athletik.' },
+    { title: 'MVP-Status',  text: 'Diese Seite wird laufend mit Trainingszeiten, Bildern und Teaminfos ergänzt.' },
+  ]}
+  cta={{
+    heading:       'Interesse an Leichtathletik?',
+    subtext:       'Melde dich bei uns für Probetraining, Einstiegstermine und aktuelle Gruppeninfos.',
+    primaryLabel:  'Ansprechpartner kontaktieren',
+    secondaryLabel:'Weitere Angebote ansehen',
+    secondaryHref: '/ansprechpartner',
+  }}
+/>

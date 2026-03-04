@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /.astro/
+Disallow: /_astro/
+Disallow: /dist/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Prefer HTTPS
+Prefer: https://89.167.0.28
+
+Sitemap: https://89.167.0.28/sitemap.xml

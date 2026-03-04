@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface InfoCard {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  /** HTML <title> für den Tab */
+  title: string;
+  /** Meta-Description */
+  description: string;
+  /** Tailwind-Gradient-Klassen für den Sektion-Hintergrund, z.B. "from-purple-50 via-white to-indigo-50" */
+  bgGradient: string;
+  /** Tailwind-Textfarbe für das Abteilungs-Label, z.B. "text-purple-600" */
+  accentColor: string;
+  /** Emoji-Icon der Abteilung */
+  emoji: string;
+  /** Kurzname der Abteilung (für das Label) */
+  label: string;
+  /** H1-Überschrift */
+  heading: string;
+  /** Einleitungstext unter der Überschrift */
+  intro: string;
+  /** Drei Info-Karten */
+  cards: [InfoCard, InfoCard, InfoCard];
+  /** CTA-Block am Ende */
+  cta: {
+    heading: string;
+    subtext: string;
+    primaryLabel: string;
+    secondaryLabel: string;
+    secondaryHref: string;
+  };
+}
+
+const { title, description, bgGradient, accentColor, emoji, label, heading, intro, cards, cta } = Astro.props;
+---
+
+<Layout {title} {description}>
+  <Header />
+
+  <section class={`py-20 bg-gradient-to-br ${bgGradient}`}>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Hero -->
+      <div class="text-center mb-14">
+        <span class={`${accentColor} font-bold uppercase tracking-wider text-sm`}>{emoji} {label}</span>
+        <h1 class="text-5xl font-black text-anthrazit mt-4 mb-5">{heading}</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">{intro}</p>
+      </div>
+
+      <!-- Info-Karten -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {cards.map((card) => (
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+            <h2 class="text-lg font-bold text-anthrazit mb-2">{card.title}</h2>
+            <p class="text-sm text-gray-600">{card.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA-Block -->
+      <div class="bg-anthrazit rounded-3xl p-8 md:p-10 text-white">
+        <h2 class="text-2xl font-bold mb-3">{cta.heading}</h2>
+        <p class="text-gray-300 mb-6">{cta.subtext}</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/kontakt"
+            class="bg-westfalia-red hover:bg-red-700 text-white font-bold px-7 py-3 rounded-xl transition text-center"
+          >
+            {cta.primaryLabel}
+          </a>
+          <a
+            href={cta.secondaryHref}
+            class="bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-3 rounded-xl transition text-center"
+          >
+            {cta.secondaryLabel}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

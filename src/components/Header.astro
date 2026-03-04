@@ -1,0 +1,98 @@
+---
+const { showAnnouncement = true } = Astro.props;
+---
+
+{showAnnouncement && (
+  <div class="bg-anthrazit text-white px-4 py-2 text-sm font-medium relative z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+        <span><strong>Live:</strong> Großes Hallenturnier der E-Jugend am Wochenende!</span>
+      </div>
+      <a href="/#events" class="hover:text-westfalia-red transition underline decoration-westfalia-red underline-offset-2">Zum Spielplan →</a>
+    </div>
+  </div>
+)}
+
+<header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/assets/img/wappen-farbig.png" 
+           alt="Wappen" 
+           class="h-10 w-auto object-contain group-hover:scale-110 transition-transform duration-300">
+      
+      <div class="flex flex-col">
+        <span class="font-bold text-lg leading-none tracking-tight">Westfalia</span>
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Osterwick</span>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex gap-8 font-bold text-sm text-gray-600 items-center">
+      <a href="/#news" class="hover:text-westfalia-red transition-colors">News</a>
+      
+      <div class="relative group h-full flex items-center">
+        <button class="flex items-center gap-1 hover:text-westfalia-red transition-colors py-6">
+          Sportangebot
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-50 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="absolute top-full left-0 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+          <a href="/fussball" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition">Fußball & Trainer</a>
+          <a href="/breitensport" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Breitensport</a>
+          <a href="/badminton" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Badminton</a>
+          <a href="/tennis" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Tennis</a>
+          <a href="/leichtathletik" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Leichtathletik</a>
+        </div>
+      </div>
+
+      <div class="relative group h-full flex items-center">
+        <button class="flex items-center gap-1 hover:text-westfalia-red transition-colors py-6">
+          Der Verein
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-50 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="absolute top-full left-0 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+          <a href="/vorstand" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition">Vorstand</a>
+          <a href="/sponsoren" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Sponsoren & Partner</a>
+          <a href="/ansprechpartner" class="block px-4 py-3 hover:bg-red-50 hover:text-westfalia-red transition border-t border-gray-50">Ansprechpartner</a>
+        </div>
+      </div>
+
+      <a href="/#events" class="hover:text-westfalia-red transition-colors">Events</a>
+      
+      <a href="/kontakt" class="text-westfalia-red hover:text-westfalia-dark font-bold transition-colors">Kontakt</a>
+    </nav>
+
+    <!-- Mitglied werden: Link folgt per WisoMeinVerein -->
+    <div class="hidden md:flex gap-4 items-center"></div>
+
+    <button id="burger-btn" class="lg:hidden p-2 text-gray-600 hover:text-westfalia-red">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-xl transition-all duration-300 overflow-y-auto">
+  <div class="p-6 flex flex-col h-full">
+    <div class="flex justify-between items-center mb-8">
+      <span class="font-bold text-xl">Menü</span>
+      <button id="close-menu" class="p-2 text-gray-500 hover:text-westfalia-red bg-gray-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-6 text-2xl font-bold text-center">
+      <a href="/" class="hover:text-westfalia-red">Startseite</a>
+      <a href="/#news" class="hover:text-westfalia-red">News</a>
+      <a href="/fussball" class="text-westfalia-red bg-red-50 py-3 rounded-xl">Trainer & Teams</a>
+      <a href="/breitensport" class="hover:text-westfalia-red">Breitensport</a>
+      <a href="/badminton" class="hover:text-westfalia-red">Badminton</a>
+      <a href="/leichtathletik" class="hover:text-westfalia-red">Leichtathletik</a>
+      <a href="/vorstand" class="hover:text-westfalia-red">Vorstand</a>
+      <a href="/#events" class="hover:text-westfalia-red">Events</a>
+      <a href="/kontakt" class="hover:text-westfalia-red font-bold text-westfalia-red">Kontakt</a>
+      <a href="/impressum" class="hover:text-westfalia-red">Impressum</a>
+    </nav>
+  </div>
+</div>

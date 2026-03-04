@@ -1,0 +1,26 @@
+---
+import DepartmentPage from '../components/DepartmentPage.astro';
+---
+
+<DepartmentPage
+  title="Badminton - SV Westfalia Osterwick"
+  description="Badminton beim SV Westfalia Osterwick: Einstieg, Trainingszeiten und Ansprechpartner."
+  bgGradient="from-purple-50 via-white to-indigo-50"
+  accentColor="text-purple-600"
+  emoji="🏸"
+  label="Badminton"
+  heading="Badminton in Osterwick"
+  intro="Tempo, Technik und Teamgeist: Unsere Badminton-Abteilung bietet Einstiegsmöglichkeiten für Jugendliche und Erwachsene."
+  cards={[
+    { title: 'Einstieg',       text: 'Schnuppertraining und Einstieg für Anfänger sowie Wiedereinsteiger.' },
+    { title: 'Trainingsfokus', text: 'Technik, Koordination, Spielformen und regelmäßige Matchpraxis.' },
+    { title: 'MVP-Status',     text: 'Seite wird fortlaufend um Trainingszeiten, Termine und Bilder ergänzt.' },
+  ]}
+  cta={{
+    heading:       'Interesse am Badminton?',
+    subtext:       'Für Trainingszeiten und Teilnahme einfach kurz über die Kontaktseite melden.',
+    primaryLabel:  'Ansprechpartner kontaktieren',
+    secondaryLabel:'Weitere Abteilungen ansehen',
+    secondaryHref: '/ansprechpartner',
+  }}
+/>

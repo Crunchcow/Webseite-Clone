@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getAllTeams, type TeamData } from '../../lib/trainerData';
+
+interface TeamPageContent {
+  intro: string;
+  photo?: string;        // Pfad zum Mannschaftsfoto, z. B. /assets/img/1-herren.jpg
+  photoAlt?: string;
+  league?: string;
+  training?: string;
+  venue?: string;
+  links: Array<{ label: string; href: string }>;
+  news: Array<{ title: string; excerpt: string; href: string }>;
+}
+
+export function getStaticPaths() {
+  return getAllTeams().map((team) => ({
+    params: { team: team.slug },
+    props: { team },
+  }));
+}
+
+const { team } = Astro.props as { team: TeamData };
+const title = `${team.name} - Fußball | SV Westfalia Osterwick`;
+
+const teamContentMap: Record<string, TeamPageContent> = {
+  '1-herren': {
+    intro:
+      'Die 1. Herren stehen für ambitionierten Fußball, klare Teamstruktur und intensive Nachwuchsarbeit. Hier findest du Ansprechpartner, wichtige Infos und aktuelle Themen rund um das Team.',
+    photo: '/assets/img/mannschaftsfoto-1-herren.jpg',  // Foto hier eintragen sobald vorhanden
+    photoAlt: 'Mannschaftsfoto 1. Herren SV Westfalia Osterwick',
+    league: 'Bezirksliga',
+    training: 'Dienstag & Donnerstag, 19:30 Uhr',
+    venue: 'Wigger Arena, Osterwick',
+    links: [
+      { label: 'Kontakt zur Fußballabteilung', href: '/kontakt' },
+      { label: 'Zur gesamten Fußballübersicht', href: '/fussball#mannschaften' },
+      { label: 'Vereins-News auf Startseite', href: '/#news' },
+    ],
+    news: [
+      {
+        title: 'Saisonvorbereitung läuft',
+        excerpt: 'Die 1. Herren starten in die nächste Trainingsphase mit Fokus auf Fitness und Spielformen.',
+        href: '/#news',
+      },
+      {
+        title: 'Trainerteam bestätigt',
+        excerpt: 'Das Team hinter dem Team bleibt bestehen und setzt auf Kontinuität in der Entwicklung.',
+        href: '/fussball#mannschaften',
+      },
+      {
+        title: 'Heimspieltage im Überblick',
+        excerpt: 'Alle Infos zu Heimspielen und Stadionbesuch findest du über unsere Fußballseite.',
+        href: '/fussball',
+      },
+    ],
+  },
+};
+
+const defaultContent: TeamPageContent = {
+  intro: `Hier findest du die Ansprechpartner und wichtigsten Informationen rund um ${team.name}. Inhalte und Kontakte werden zentral aus der Trainer-App gepflegt.`,
+  links: [
+    { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+    { label: 'Kontakt zur Abteilung', href: '/kontakt' },
+  ],
+  news: [
+    {
+      title: 'Teamseite ist aktiv',
+      excerpt: 'Die Seite ist bereit und zeigt Ansprechpartner automatisch aus der Trainer-App.',
+      href: '/fussball#mannschaften',
+    },
+  ],
+};
+
+const content = teamContentMap[team.slug] || defaultContent;
+---
+
+<Layout title={title} description={`Ansprechpartner und Trainerteam von ${team.name}.`}>
+  <Header />
+
+  <section class="py-20 bg-gradient-to-br from-red-50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="/fussball#mannschaften" class="inline-flex items-center text-sm font-bold text-westfalia-red hover:underline mb-6">
+        ← Zur Mannschaftsübersicht
+      </a>
+
+      <div class="mb-10 bg-white rounded-3xl border border-gray-100 shadow-sm p-8 md:p-10">
+        <p class="text-xs font-bold uppercase tracking-widest text-westfalia-red">{team.section}</p>
+        <h1 class="text-4xl md:text-5xl font-black text-anthrazit mt-2">{team.name}</h1>
+
+        {content.photo && (
+          <div class="mt-6 rounded-2xl overflow-hidden aspect-[16/6] bg-gray-100">
+            <img
+              src={content.photo}
+              alt={content.photoAlt ?? `Mannschaftsfoto ${team.name}`}
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+        )}
+
+        <p class="text-gray-600 mt-4 max-w-4xl">{content.intro}</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2 space-y-8">
+          <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
+            <h2 class="text-2xl font-bold text-anthrazit mb-4">Über das Team</h2>
+            <p class="text-gray-700 leading-relaxed">
+              {content.intro}
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
+            <h2 class="text-2xl font-bold text-anthrazit mb-6">News & Artikel</h2>
+            <div class="grid gap-4">
+              {content.news.map((item) => (
+                <article class="rounded-2xl border border-gray-200 p-5 bg-gray-50 hover:bg-white hover:shadow-md transition">
+                  <h3 class="text-lg font-bold text-anthrazit">{item.title}</h3>
+                  <p class="text-sm text-gray-600 mt-2">{item.excerpt}</p>
+                  <a href={item.href} class="inline-flex mt-3 text-sm font-bold text-westfalia-red hover:underline">
+                    weiterlesen →
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <aside class="space-y-6 lg:sticky lg:top-24">
+          <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+            <h3 class="text-lg font-bold text-anthrazit mb-4">Ansprechpartner</h3>
+            {team.members.length > 0 ? (
+              <ul class="space-y-3">
+                {team.members.map((member) => (
+                  <li class="rounded-xl border border-gray-200 p-3 bg-white">
+                    <p class="font-semibold text-anthrazit text-sm">{member.name}</p>
+                    <p class="text-xs text-gray-500 mt-1">{member.role || 'Ansprechpartner'}</p>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                      {member.phone && (
+                        <a href={`tel:${member.phone}`} class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-red-50 text-westfalia-red hover:bg-red-100 transition">
+                          Telefon
+                        </a>
+                      )}
+                      {member.email && (
+                        <a href={`mailto:${member.email}`} class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-anthrazit hover:bg-gray-200 transition">
+                          E-Mail
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div class="rounded-xl border border-amber-200 bg-amber-50 p-3 text-amber-900 text-xs">
+                Noch keine Ansprechpartner hinterlegt.
+              </div>
+            )}
+          </div>
+
+          <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+            <h3 class="text-lg font-bold text-anthrazit mb-4">Wichtige Infos</h3>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <p class="text-xs uppercase tracking-wider text-gray-500">Bereich</p>
+                <p class="font-semibold text-anthrazit">{team.section}</p>
+              </li>
+              <li>
+                <p class="text-xs uppercase tracking-wider text-gray-500">Mannschaft</p>
+                <p class="font-semibold text-anthrazit">{team.name}</p>
+              </li>
+              {content.league && (
+                <li>
+                  <p class="text-xs uppercase tracking-wider text-gray-500">Spielklasse</p>
+                  <p class="font-semibold text-anthrazit">{content.league}</p>
+                </li>
+              )}
+              {content.training && (
+                <li>
+                  <p class="text-xs uppercase tracking-wider text-gray-500">Training</p>
+                  <p class="font-semibold text-anthrazit">{content.training}</p>
+                </li>
+              )}
+              {content.venue && (
+                <li>
+                  <p class="text-xs uppercase tracking-wider text-gray-500">Spielort</p>
+                  <p class="font-semibold text-anthrazit">{content.venue}</p>
+                </li>
+              )}
+            </ul>
+          </div>
+
+          <div class="bg-anthrazit rounded-3xl text-white p-6 shadow-lg">
+            <h3 class="text-lg font-bold mb-4">Links</h3>
+            <div class="space-y-2">
+              {content.links.map((link) => (
+                <a href={link.href} class="block rounded-xl bg-white/10 hover:bg-white/20 transition px-3 py-2 text-sm font-semibold">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
+  </section>
+
+  <Footer />
+</Layout>

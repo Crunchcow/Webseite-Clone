@@ -1,0 +1,84 @@
+# Decap CMS Konfiguration – SV Westfalia Osterwick
+#
+# Produktion (Netlify / GitHub OAuth):
+#   1. GitHub OAuth App anlegen: github.com → Settings → Developer Settings →
+#      OAuth Apps → New OAuth App
+#      - Authorization callback URL: https://api.netlify.com/auth/done
+#   2. In Netlify: Site configuration → Access & security → OAuth providers
+#      → GitHub → Client ID + Secret eintragen
+#   3. `local_backend: true` entfernen oder auf false setzen
+#
+# Die Person, die Inhalte pflegt, benötigt einen GitHub-Account und
+# muss als Collaborator im Repository eingetragen sein (kostenlos).
+#
+# Lokale Entwicklung:
+#   `npx decap-server` im Projektverzeichnis starten, dann /admin aufrufen.
+
+local_backend: true
+
+backend:
+  name: github
+  repo: DEIN-GITHUB-USERNAME/DEIN-REPO-NAME   # <-- anpassen
+  branch: main
+
+media_folder: "public/assets/img"
+public_folder: "/assets/img"
+
+locale: de
+
+collections:
+  # -------------------------------------------------------
+  # NEWS – Markdown-Dateien in src/content/news/
+  # -------------------------------------------------------
+  - name: "news"
+    label: "Vereinsnews"
+    label_singular: "News-Beitrag"
+    folder: "src/content/news"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titel",         name: "title",         widget: "string" }
+      - { label: "Datum",         name: "date",          widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - label: "Kategorie"
+        name: "category"
+        widget: "select"
+        options: ["Fußball", "Badminton", "Tennis", "Leichtathletik", "Veranstaltung", "Allgemein", "Sport"]
+      - label: "Kategorie-Farbe"
+        name: "categoryColor"
+        widget: "select"
+        options:
+          - { label: "Vereinsrot",   value: "bg-westfalia-red" }
+          - { label: "Blau",         value: "bg-blue-500" }
+          - { label: "Lila",         value: "bg-purple-600" }
+          - { label: "Grün",         value: "bg-green-600" }
+          - { label: "Orange",       value: "bg-orange-500" }
+          - { label: "Dunkelgrau",   value: "bg-gray-700" }
+      - { label: "Vorschaubild",   name: "image",         widget: "image",   required: false }
+      - { label: "Bild-Alt-Text",  name: "imageAlt",      widget: "string",  required: false }
+      - { label: "Kurztext",       name: "excerpt",       widget: "text" }
+      - { label: "Veröffentlicht", name: "published",     widget: "boolean", default: true }
+      - { label: "Inhalt",         name: "body",          widget: "markdown", required: false }
+
+  # -------------------------------------------------------
+  # EVENTS – JSON-Dateien in src/content/events/
+  # -------------------------------------------------------
+  - name: "events"
+    label: "Events & Termine"
+    label_singular: "Termin"
+    folder: "src/content/events"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Titel",                  name: "title",               widget: "string" }
+      - { label: "Datum",                  name: "date",                widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { label: "Uhrzeit (z. B. 20:00 Uhr)", name: "time",           widget: "string",  required: false }
+      - { label: "Ort",                    name: "location",            widget: "string",  required: false }
+      - { label: "Kurzbeschreibung",       name: "excerpt",             widget: "text" }
+      - { label: "Highlight-Termin",       name: "highlight",           widget: "boolean", default: false }
+      - { label: "Highlight-Bild",         name: "highlightImage",      widget: "image",   required: false }
+      - { label: "Highlight-Beschreibung", name: "highlightDescription", widget: "text",   required: false }
+      - { label: "Veröffentlicht",         name: "published",           widget: "boolean", default: true }

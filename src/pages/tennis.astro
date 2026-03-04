@@ -1,0 +1,26 @@
+---
+import DepartmentPage from '../components/DepartmentPage.astro';
+---
+
+<DepartmentPage
+  title="Tennis - SV Westfalia Osterwick"
+  description="Tennis beim SV Westfalia Osterwick: Einstieg, Trainingsinfos und Ansprechpartner."
+  bgGradient="from-lime-50 via-white to-green-50"
+  accentColor="text-lime-700"
+  emoji="🎾"
+  label="Tennis"
+  heading="Tennis in Osterwick"
+  intro="Ob Freizeitspieler oder ambitionierter Einstieg – hier entsteht die zentrale Anlaufstelle für alle Tennis-Interessierten im Verein."
+  cards={[
+    { title: 'Einstieg',    text: 'Schnuppertraining und Informationen zu Gruppen, Altersklassen und Spielzeiten.' },
+    { title: 'Anlage',      text: 'Platzinformationen, Saisonhinweise und Ablauf rund um den Trainingsbetrieb folgen.' },
+    { title: 'MVP-Status',  text: 'Die Seite ist bewusst schlank und wird mit Bildern und Inhalten erweitert.' },
+  ]}
+  cta={{
+    heading:       'Tennis-Anfrage stellen',
+    subtext:       'Für Trainingszeiten, Einstieg oder Platzfragen erreichst du uns direkt über den Kontakt.',
+    primaryLabel:  'Ansprechpartner kontaktieren',
+    secondaryLabel:'Weitere Angebote ansehen',
+    secondaryHref: '/ansprechpartner',
+  }}
+/>
