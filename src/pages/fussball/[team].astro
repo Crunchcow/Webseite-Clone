@@ -29,7 +29,7 @@ const teamContentMap: Record<string, TeamPageContent> = {
   '1-herren': {
     intro:
       'Die 1. Herren stehen für ambitionierten Fußball, klare Teamstruktur und intensive Nachwuchsarbeit. Hier findest du Ansprechpartner, wichtige Infos und aktuelle Themen rund um das Team.',
-    photo: '/assets/img/mannschaftsfoto-1-herren.jpg',  // Foto hier eintragen sobald vorhanden
+    photo: '/assets/img/WO1Herren.jpg',
     photoAlt: 'Mannschaftsfoto 1. Herren SV Westfalia Osterwick',
     league: 'Bezirksliga',
     training: 'Dienstag & Donnerstag, 19:30 Uhr',
@@ -55,6 +55,283 @@ const teamContentMap: Record<string, TeamPageContent> = {
         excerpt: 'Alle Infos zu Heimspielen und Stadionbesuch findest du über unsere Fußballseite.',
         href: '/fussball',
       },
+    ],
+  },
+
+  '2-herren': {
+    intro: 'Die 2. Herren bilden das Bindeglied zwischen dem Spitzensport der Ersten und dem Breitensport. Solide, verlässlich und immer mit vollem Einsatz.',
+    // photo: '/assets/img/WO2Herren.jpg',
+    // league: 'Kreisliga A',
+    // training: 'Montag & Mittwoch, 19:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Kontakt zur Fußballabteilung', href: '/kontakt' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der Zweiten', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  '3-herren': {
+    intro: 'Die 3. Herren sind das Herzstück des Breitensports bei Westfalia Osterwick – Spaß am Spiel, starker Zusammenhalt und regelmäßiger Spielbetrieb stehen im Vordergrund.',
+    // photo: '/assets/img/WO3Herren.jpg',
+    // league: 'Kreisliga B',
+    // training: 'Mittwoch, 19:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Kontakt zur Fußballabteilung', href: '/kontakt' },
+    ],
+    news: [
+      { title: 'Neues aus der Dritten', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'damen': {
+    intro: 'Das Damenteam von SV Westfalia Osterwick steht für engagierten Frauenfußball und eine starke Gemeinschaft.',
+    // photo: '/assets/img/WODamen.jpg',
+    // league: 'Kreisliga',
+    // training: 'Donnerstag, 19:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Kontakt zur Fußballabteilung', href: '/kontakt' },
+    ],
+    news: [
+      { title: 'Aktuelles vom Damenteam', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'a-jugend': {
+    intro: 'Die A-Jugend steht kurz vor dem Sprung in den Seniorenbereich und trainiert auf hohem Niveau.',
+    // photo: '/assets/img/WOAJugend.jpg',
+    // league: 'Bezirksliga Junioren',
+    // training: 'Dienstag & Donnerstag, 18:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der A-Jugend', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'b-jugend': {
+    intro: 'Die B-Jugend entwickelt ihre Fähigkeiten in einem starken Trainingsumfeld und zeigt regelmäßig gute Leistungen.',
+    // photo: '/assets/img/WOBJugend.jpg',
+    // league: 'Kreisliga Junioren',
+    // training: 'Montag & Mittwoch, 17:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der B-Jugend', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'c-jugend': {
+    intro: 'In der C-Jugend wird der Grundstein für die weitere Fußballkarriere gelegt – taktisch, technisch und teamorientiert.',
+    // photo: '/assets/img/WOCJugend.jpg',
+    // league: 'Kreisliga Junioren',
+    // training: 'Dienstag & Freitag, 17:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der C-Jugend', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'd-jugend-1': {
+    intro: 'D-Jugend (1) – Spielfreude und erste taktische Grundlagen stehen im Mittelpunkt.',
+    // photo: '/assets/img/WODJugend1.jpg',
+    // league: 'Kreisklasse Junioren',
+    // training: 'Mittwoch & Freitag, 16:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der D-Jugend (1)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'd-jugend-2': {
+    intro: 'D-Jugend (2) – Auch das zweite Team der D-Jugend trainiert regelmäßig und nimmt am Spielbetrieb teil.',
+    // photo: '/assets/img/WODJugend2.jpg',
+    // league: 'Kreisklasse Junioren',
+    // training: 'Dienstag & Donnerstag, 16:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der D-Jugend (2)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'e-jugend-1': {
+    intro: 'E-Jugend (1) – Begeisterung für den Ball und erste Spielzüge stehen im Vordergrund.',
+    // photo: '/assets/img/WOEJugend1.jpg',
+    // training: 'Mittwoch, 16:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der E-Jugend (1)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'e-jugend-2': {
+    intro: 'E-Jugend (2) – Das zweite E-Jugend-Team trainiert fleißig und wächst Woche für Woche zusammen.',
+    // photo: '/assets/img/WOEJugend2.jpg',
+    // training: 'Donnerstag, 16:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der E-Jugend (2)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'e-jugend-3': {
+    intro: 'E-Jugend (3) – Auch das dritte E-Jugend-Team zeigt, wie groß die Fußballfamilie in Osterwick ist.',
+    // photo: '/assets/img/WOEJugend3.jpg',
+    // training: 'Freitag, 16:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der E-Jugend (3)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'f-jugend-1': {
+    intro: 'F-Jugend (1) – Die Kleinsten mit dem größten Enthusiasmus. Hier beginnt die Westfalia-Geschichte.',
+    // photo: '/assets/img/WOFJugend1.jpg',
+    // training: 'Samstag, 10:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der F-Jugend (1)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'f-jugend-2': {
+    intro: 'F-Jugend (2) – Spielen, Lachen, Lernen. Das zweite F-Jugend-Team ist immer mit Herzblut dabei.',
+    // photo: '/assets/img/WOFJugend2.jpg',
+    // training: 'Samstag, 11:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der F-Jugend (2)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'g-jugend-1': {
+    intro: 'G-Jugend (1) – Bambini-Fußball at its best. Hier macht der Ball schon den Kleinsten riesige Freude.',
+    // photo: '/assets/img/WOGJugend1.jpg',
+    // training: 'Samstag, 09:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der G-Jugend (1)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'g-jugend-2': {
+    intro: 'G-Jugend (2) – Das zweite Bambini-Team, genauso motiviert und begeistert wie das erste.',
+    // photo: '/assets/img/WOGJugend2.jpg',
+    // training: 'Samstag, 09:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Junioren-Teams', href: '/fussball#junioren' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der G-Jugend (2)', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  // --- Juniorinnen ---
+
+  'b-jugend-2': {
+    intro: 'Die B-Juniorinnen von Westfalia Osterwick begeistern mit Einsatz und Teamgeist.',
+    // photo: '/assets/img/WOBJuniorinnen.jpg',
+    // league: 'Kreisliga Juniorinnen',
+    // training: 'Montag & Mittwoch, 17:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Juniorinnen-Teams', href: '/fussball#juniorinnen' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der B-Juniorinnen', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'd-jugend': {
+    intro: 'Die D-Juniorinnen – Begeisterung für den Frauenfußball beginnt hier.',
+    // photo: '/assets/img/WODJuniorinnen.jpg',
+    // training: 'Dienstag & Freitag, 16:30 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Juniorinnen-Teams', href: '/fussball#juniorinnen' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der D-Juniorinnen', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'e-jugend': {
+    intro: 'Die E-Juniorinnen – Hier macht der Ball schon den Jüngsten riesige Freude.',
+    // photo: '/assets/img/WOEJuniorinnen.jpg',
+    // training: 'Mittwoch, 16:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Juniorinnen-Teams', href: '/fussball#juniorinnen' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der E-Juniorinnen', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
+    ],
+  },
+
+  'f-jugend': {
+    intro: 'Die F-Juniorinnen – Die kleinsten Kickerinnen von Westfalia Osterwick.',
+    // photo: '/assets/img/WOFJuniorinnen.jpg',
+    // training: 'Samstag, 10:00 Uhr',
+    // venue: 'Westfalia-Stadion, Osterwick',
+    links: [
+      { label: 'Zur Mannschaftsübersicht', href: '/fussball#mannschaften' },
+      { label: 'Alle Juniorinnen-Teams', href: '/fussball#juniorinnen' },
+    ],
+    news: [
+      { title: 'Aktuelles aus der F-Juniorinnen', excerpt: 'Platzhalter – hier kann eine aktuelle Meldung eingetragen werden.', href: '/#news' },
     ],
   },
 };
@@ -91,11 +368,11 @@ const content = teamContentMap[team.slug] || defaultContent;
         <h1 class="text-4xl md:text-5xl font-black text-anthrazit mt-2">{team.name}</h1>
 
         {content.photo && (
-          <div class="mt-6 rounded-2xl overflow-hidden aspect-[16/6] bg-gray-100">
+          <div class="mt-6 rounded-2xl overflow-hidden bg-gray-100 h-96">
             <img
               src={content.photo}
               alt={content.photoAlt ?? `Mannschaftsfoto ${team.name}`}
-              class="w-full h-full object-cover object-top"
+              class="w-full h-full object-cover object-[center_30%]"
             />
           </div>
         )}
